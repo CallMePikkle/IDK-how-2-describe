@@ -1,0 +1,23 @@
+idle = 1
+dots = 0
+dash = 0
+zero = 0
+with open('dict.txt') as f:
+    print("Number of Lines: ", end='')
+    num_lines = str(len(f.readlines()))
+    num2 = num_lines
+    num = f.readline(idle)
+    print(num_lines)
+    while idle < len(f.readlines()):
+        if "." in num:
+            dots += 1
+            idle += 1
+        if "-" in num:
+            dash += 1
+            idle += 1
+        else:
+            idle += 1
+print("There was a total of " + str(dots) + " dots detected in that file")
+print("There was a total of " + str(dash) + " dashes detected in that file")
+print(idle)
+    
